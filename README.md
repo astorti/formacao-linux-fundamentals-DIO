@@ -81,3 +81,79 @@ Repositório para estudo dos conceitos aprendidos durante o curso **Formação L
     - **Criar um arquivo**
         - `touch nome-do-arquivo.extensão`: criar o arquivo dentro da pasta atual
             - exemplo: `touch teste.txt`
+
+    - **Busca de arquivos**
+
+        - **ls**
+            - `ls /nome-da-pasta/nome-arquivo`<br/>
+        Buscar um nome parcial
+            - `ls /nome-da-pasta/arquivo*`<br/>
+        
+        - **find**
+            - `find -name "nome-do-arquivo"`
+            - `find -name "nome-do-arquivo*"`
+
+    - **Criar diretórios**
+        
+        - Na pasta aberta no terminal
+            - `mkdir novo-diretório`
+            - `mkdir "novo diretorio"`
+        - Criar multiplos diretórios
+            - `mkdir novo-diretorio1 novo-diretorio2`
+        - Em pasta diferente do terminal
+            - `mkdir /home/diretorio/novo-diretorio`
+            - `mkdir /home/diretorio/diretorio/novo-diretorio`
+
+    - **Remover diretórios**
+
+        - Na pasta em que o diretório se localiza
+            - `rmdir nome-do-diretorio`
+            - `rmdir "nome do diretorio"`
+        - Remover multiplos diretorios
+            - `rmdir diretorio1 diretorio2`
+
+    - **Remover arquivos**
+
+        - Na pasta que o arquivo se localiza
+            - `rm nome-do-arquivo`
+        - Remover todos com mesma extensão
+            - `rm *.extensão`
+        - Remover vários arquivos com nomes similares
+            - `rm arquivo*`
+
+
+    - **Edição de Arquivos**
+        - Editores
+            - vi
+                - `vi nome-do-arquivo`
+                - Para editar o arquivo: `i`
+                - Para sair do modo de edição: teclar `Esc`
+                - Para habilitar o menu do vi: teclar `:`
+                - Para salvar o arquivo: `w`
+                - Para sair do editor vi: `q`
+            - nano
+                - `nano nome-do-arquivo`: O nano já entra em modo de edição.
+                - Para salvar: `Ctrl + o` e `Enter`
+                - Para sair: `Ctrl + x`
+
+- Comando history
+    - Para ver o comandos realizados no terminal
+        - `history`
+    - Para ver uma quantidade específica dos ultimos comandos:
+        - `history 30`
+        - `history 5`
+    - Para executar um comando a partir da listagem do history
+        - `!numero-do-comando-na-lista-do-history`
+        - Exemplo: `!50`
+    - Para executar o último comando digitado no terminal
+        - `!!`
+    - Para executar o último comando a partir de um parâmetro
+        - `!?parametro?`
+        - Exemplo: `!?teste?`: Neste comando será executado o último comando do history que contêm o termo "teste"
+    - Para listar todos os comandos do history a partir de um parâmetro
+        - `history | grep "parametro"`
+        - Exemplo: `history | grep "install"`
+    - Para exibir o history com data e hora dos comando
+        - `export HISTTIMEFORMAT="%c "`
+        - `history`
+
