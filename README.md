@@ -269,3 +269,46 @@ Repositório para estudo dos conceitos aprendidos durante o curso **Formação L
                 * `chmod +x exemplo1.sh`
                 * Para remover permissão
                 * `chmod -x exemplo1.sh`
+
+#### Gerenciamento de Pacotes Linux
+
+- **Ubuntu/Debian**
+	+ Gerenciadores de pacotes
+		+ `apt-get`
+		+ `apt`
+	+ Para listar pacotes disponíveis
+		+ `apt list`
+	+ Para listar pacotes instalados
+		+ `apt list --insttaled`
+	+ Para lista pacotes disponíveis para atualização
+		+ `apt list --upgradeable`
+	+ Buscar um pacote através de um parâmetro
+		+ `apt search parâmetro`
+		+ Exemplo: `apt search gimp`
+	+ Para instalar pacotes
+		+ `apt install nome-do-pacote`
+		+ Exemplo: `apt install gimp`
+	+ Para desinstalar pacotes
+		+ `apt remove nome-do-pacote`
+		+ Exemplo: `apt remove gimp`
+	+ Para atualizar o sistema operacional
+		+ `apt update`
+		+ `apt upgrade`
+			
+			Observação: ambos comando devem ser utilizados para a atualização
+		
+- **Fedora/RedHat**
+	+ Gerenciadore de pacotes
+		* `yum`
+		* `dnf`
+	+ Buscar um pacote através de um parâmetro
+		+ `dnf search parâmetro`
+		+ Exemplo: `dnf search gimp`
+	+ Para instalar pacotes
+		+ `dnf install nome-do-pacote`
+		+ Exemplo: `dnf install gimp`
+	+ Para desinstalar pacotes
+		+ `dnf remove nome-do-pacote`
+		+ Exemplo: `dnf remove gimp`
+	+ Para atualizar o sistema operacional
+		+ `dnf update`
