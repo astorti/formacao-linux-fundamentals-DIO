@@ -312,3 +312,48 @@ Repositório para estudo dos conceitos aprendidos durante o curso **Formação L
 		+ Exemplo: `dnf remove gimp`
 	+ Para atualizar o sistema operacional
 		+ `dnf update`
+
+#### Gerenciamento de Discos
+
+- **Disco**
+	+ HD
+	+ SSD
+- **Sistemas de arquivos**
+	- MacOS: `HFS`
+	- Unix/Linux: `Ext3`, `Ext4`, `XFS`
+	- Windows: `FAT32`, `NTFS`
+- **Partições**
+	+ No Linux cada disco recebe um nome
+		* disco 1: `sda`
+		* disco 2: `sdb`
+	+ As partições dos discos recebem um nome
+		- partições do disco sda: `sda1`, `sda2`, etc
+		- partições do disco sdb: `sdb1`, `sdb2`, etc
+- **Comandos para visualizar os discos**
+	- `lsblk`
+	- `fdisk -l`
+- **Particionar e formatar um disco**
+	+ Particionar
+		+ `fdisk /dev/nome-do-disco`
+			+ Exemplo: `fdisk /dev/sdb` (Se sdb não estiver disponível, inserir um novo disco para ser particionado e formatado)
+		+ Considerando que o disco esteja vazio e não particionado, seguir as instruções e opções do menu no terminal
+            * teclar: `n` (cria nova partição no disco)
+            * teclar: `p` (tipo de partição primária)
+            * teclar: `1` (número de partições)
+            * teclar: `Enter` (manter o valor padrão para primeiro setor)
+            * teclar: `Enter` (manter o valor padrão para último setor)
+            * teclar: `w` (salva a partição e sai do menu)
+	+ Formatar
+		* `mkfs.ext4 /dev/sdb1`
+- **Montar e Desmontar disco**
+	+ Criar pasta: `mkdir /mnt/disco2`
+	+ Montar: `mount /dev/sdb1 /mnt/disco2`
+	+ Desmontar: `umount /dev/sdb1`
+	
+- **Montagem automática**
+	+ Criar uma pasta no disretório raiz
+		* Exemplo: `mkdir /disk2`
+	+ editar o arquivo `/etc/fstab`
+		* no final do arquivo inserir a linha abaixo e salvar
+			- `/dev/sdb1 /disk2 ext4 defaults 0 0`
+		* Na próxima reinicialização do sistema o disco será montado automaticamente.
