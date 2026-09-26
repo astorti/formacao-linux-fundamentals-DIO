@@ -279,7 +279,7 @@ Repositório para estudo dos conceitos aprendidos durante o curso **Formação L
 	+ Para listar pacotes disponíveis
 		+ `apt list`
 	+ Para listar pacotes instalados
-		+ `apt list --insttaled`
+		+ `apt list --installed`
 	+ Para lista pacotes disponíveis para atualização
 		+ `apt list --upgradeable`
 	+ Buscar um pacote através de um parâmetro
@@ -357,3 +357,35 @@ Repositório para estudo dos conceitos aprendidos durante o curso **Formação L
 		* no final do arquivo inserir a linha abaixo e salvar
 			- `/dev/sdb1 /disk2 ext4 defaults 0 0`
 		* Na próxima reinicialização do sistema o disco será montado automaticamente.
+
+#### Copiando arquivos e manipulando processos
+
+- **Copiar Arquivos e Diretórios**
+	+ Para copiar um arquivos de uma local para outro, informar o caminho de origem e o caminho de destino
+		* Exemplo: para mover da pasta Downloads para Documentos
+			- `cp /home/usuario/Downloads/nome-do-arquivo /home/usuario/Documentos`
+	+ Copia a partir da pasta usuario
+		* ` cp ./Downloads/nome-do-arquivo ./Documentos`
+	+ Copia de varios arquivos com mesma extensão
+		* `cp ./Downloads/*.txt ./Documentos`
+	+ Copia de varios documentos com nomes semelhantes
+		* `cp ./Downloads/relatorio* ./Documentos`
+	+ Para solicitar confirmação de sobreposição de arquivos já existente na pasta de destino
+		* `cp -i ./Downloads/nome-do-arquivo ./Documentos`
+	* Para copiar todo o conteudo de uma pasta
+		- `cp ./Downloads/* ./Documentos` (não copia diretório)
+	* Para copiar todo o conteudo incluindo diretório
+		- `cp -r ./Downloads/* ./Documentos`
+	* Para visualizar todos os arquivos que estão sendo copiados
+		- `cp -v ./Downloads/* ./Documentos`
+- **Mover ou Renomear Arquivos e Diretório**
+	+ Para mover e renomer arquivos e diretórios, utiliza o comando `mv` que segue o mesmo principio do `cp`, com exceção da flag `-r`, pois o `mv` já trata também de mover os diretórios.
+		+ Exemplo: `mv -i -v ./Downloads/Arquivos ./Documentos`
+			* Neste exemplo a pasta **Arquivos** será movida para **Documentos**
+	+ Para renomear um arquivo
+		* `mv ./Documentos/arquivo1.txt ./Documentos/arquivo2.txt`
+		* Ou se já estiver no diretório Documentos
+			- `mv arquivo1.txt arquivo2.txt`
+- **Processos**
+	+ Para verificar todos os processos que estão em execução no servidor
+		* `ps aux` a = mostra todos os processos, u = mostra todos os usuarios, x = mostra todos os processos rodando fora do console
