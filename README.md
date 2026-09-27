@@ -415,3 +415,17 @@ Repositório para estudo dos conceitos aprendidos durante o curso **Formação L
 			- `systemct enable smbd`
 	+ Para acessar a pasta publica do servidor a partir de outro computador
 		* `\\numero-do-ip-do-servidor/nome-da-pasta-publica`
+
+#### Servidores web com Linux
+
+- **Servidor web**
+    - instalação Apache
+        - `apt install apache2`
+    - verificar se o apache está ativo
+        - `systemctl status apache2`
+    - verificar o endereço ip da rede local com `ip a`
+    - abrir o navegador e digitar o endereço ip encontrado
+        - se o Apache estiver ativo, será exibida uma pagina web padrão do Apache
+        - essa pagina html fica disponível em `/var/www/html/index.html` e pode ser editada.
+        
+        OBS: pode ser que seja necessário liberar o protocolo http no firewall para a página funcionar.
