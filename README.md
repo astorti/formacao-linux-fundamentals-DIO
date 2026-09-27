@@ -389,3 +389,29 @@ Repositório para estudo dos conceitos aprendidos durante o curso **Formação L
 - **Processos**
 	+ Para verificar todos os processos que estão em execução no servidor
 		* `ps aux` a = mostra todos os processos, u = mostra todos os usuarios, x = mostra todos os processos rodando fora do console
+
+#### Servidores de arquivos com Linux
+
+- **Servidor de arquivos**
+	+ Instalação do Samba
+	+ Criação da pasta `publica` no disk2
+		* alterar permissões da pasta publica (777)
+	+ Configuração samba
+		* disponibilizar a pasta `publica ` para toda a rede
+			- editar arquivo smb.conf
+				+ `nano /etc/samba/smb.conf`
+				+ no final do arquivo acrescentar
+                    ```
+                    [publica]
+                    writable = yes
+                    guest ok = yes
+                    guest only = yes
+                    ```
+			- reiniciar o serviço samba
+				+ `systemctl restart smbd`
+		* verificar o status do serviço samba
+			- `systemctl status smbd`
+		* para serviço samba iniciar automaticamente ao iniciar o servidor
+			- `systemct enable smbd`
+	+ Para acessar a pasta publica do servidor a partir de outro computador
+		* `\\numero-do-ip-do-servidor/nome-da-pasta-publica`
