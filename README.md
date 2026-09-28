@@ -14,6 +14,13 @@ Repositório para estudo dos conceitos aprendidos durante o curso **Formação L
 ### **Ferramentas**
 ![ubuntu](https://img.shields.io/badge/ubuntu_server-E95420.svg?style=for-the-badge&logo=ubuntu&logoColor=white)
 
+### **Projetos Práticos**
+
+#### **Projetos desenvolvidos durante os estudos da formação**
+
+- **Projeto 1 — [Script de Criação de Estrutura de Usuários, Diretórios e Permissões](https://github.com/astorti/projetos-dio/tree/main/Linux/InfraestruturaComoCodigo)**
+- **Projeto 2 — [Script de Provisionamento de um Servidor Web (Apache)](https://github.com/astorti/projetos-dio/tree/main/Linux/ScriptProvisionamentoServidorWebApache)**
+
 ### **Conceitos Desenvolvidos**
 
 #### **Introdução ao Sistema Operacional Linux**
@@ -429,3 +436,25 @@ Repositório para estudo dos conceitos aprendidos durante o curso **Formação L
         - essa pagina html fica disponível em `/var/www/html/index.html` e pode ser editada.
         
         OBS: pode ser que seja necessário liberar o protocolo http no firewall para a página funcionar.
+
+#### Servidores de banco de dados com Linux
+
+- **Servidor de banco de dados**
+    - Instalção do Mysql Server
+        `apt install mysql-server`
+
+        Após a instalação, o MuSQL Server já está disponível para uso
+
+#### Conhecendo o Linux Desktop
+
+- **Principais Distribuições**
+    - Ubuntu Desktop
+    - Fedora
+    - Debian
+    - Suse Linux
+    - Rocky Linux
+    - AlmaLinux
+    - Oracle Linux
+- **Instalação e visão geral do ambiente desktop**
+- **Instalação de softwares pelo ambiente desktop**
+- **Instalação de ambientes gráficos**

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formação Linux Fundamentals</title>
+<style>
+:root{
+  --bg:#0d1117; --surface:#161b22; --surface2:#21262d;
+  --text:#e6edf3; --muted:#8b949e; --accent:#58a6ff;
+  --accent2:#79c0ff; --border:#30363d; --code:#0b0f14;
+}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif;line-height:1.65}
+header{padding:70px 7%;background:linear-gradient(135deg,#111827,#0d1117);border-bottom:1px solid var(--border)}
+header h1{font-size:clamp(2rem,5vw,4rem);margin:0 0 12px}
+header p{max-width:900px;color:var(--muted);font-size:1.1rem}
+nav{position:sticky;top:0;z-index:10;background:rgba(13,17,23,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:12px 7%;overflow-x:auto;white-space:nowrap}
+nav a{color:var(--muted);text-decoration:none;margin-right:22px;font-size:.92rem}
+nav a:hover{color:var(--accent)}
+main{max-width:1250px;margin:auto;padding:35px 7% 80px}
+section{margin:48px 0;padding-top:10px}
+h2{font-size:2rem;border-bottom:1px solid var(--border);padding-bottom:10px}
+h3{font-size:1.35rem;color:var(--accent2);margin-top:30px}
+h4{color:#c9d1d9;margin-bottom:8px}
+a{color:var(--accent)}
+ul{padding-left:25px}
+li{margin:5px 0}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px}
+.project{border:1px solid var(--accent);background:linear-gradient(145deg,#111827,#161b22);border-radius:14px;padding:25px;margin:18px 0}
+.project a{display:inline-block;margin-top:8px;padding:8px 14px;border:1px solid var(--accent);border-radius:8px;text-decoration:none}
+code{background:var(--code);border:1px solid var(--border);padding:2px 6px;border-radius:5px;font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+pre{background:var(--code);border:1px solid var(--border);padding:18px;border-radius:10px;overflow:auto}
+table{width:100%;border-collapse:collapse;background:var(--surface)}
+th,td{border:1px solid var(--border);padding:10px;text-align:left}
+th{background:var(--surface2)}
+.badge{display:inline-block;padding:8px 13px;background:#e95420;color:white;border-radius:8px;font-weight:700}
+.top{position:fixed;right:20px;bottom:20px;background:var(--accent);color:#081018;padding:10px 14px;border-radius:50%;text-decoration:none;font-weight:bold}
+footer{text-align:center;color:var(--muted);padding:35px;border-top:1px solid var(--border)}
+@media(max-width:700px){header{padding:45px 6%}main{padding:25px 6%}nav{padding:12px 6%}}
+</style>
+</head>
+<body id="top">
+
+<header>
+  <h1>FORMAÇÃO LINUX FUNDAMENTALS</h1>
+  <p>Repositório para estudo dos conceitos aprendidos durante o curso <strong>Formação Linux Fundamentals</strong>, oferecido pela plataforma <strong>Digital Innovation One — DIO</strong>.</p>
+</header>
+
+<nav>
+  <a href="#links">Links</a>
+  <a href="#conceitos">Conceitos</a>
+  <a href="#arquivos">Arquivos</a>
+  <a href="#usuarios">Usuários</a>
+  <a href="#pacotes">Pacotes</a>
+  <a href="#discos">Discos</a>
+  <a href="#processos">Processos</a>
+  <a href="#servidor-arquivos">Samba</a>
+  <a href="#servidor-web">Apache</a>
+  <a href="#database">MySQL</a>
+  <a href="#desktop">Linux Desktop</a>
+  <a href="#projetos">Projetos</a>
+</nav>
+
+<main>
+
+<section id="links">
+<h2>Links</h2>
+<div class="card-grid">
+<div class="card"><a href="https://www.dio.me" target="_blank" rel="noopener noreferrer">Digital Innovation One</a></div>
+<div class="card"><a href="https://www.dio.me/curso-linux" target="_blank" rel="noopener noreferrer">Formação Linux Fundamentals</a></div>
+<div class="card"><a href="https://www.linuxfoundation.org/" target="_blank" rel="noopener noreferrer">Linux Foundation</a></div>
+</div>
+<h3>Ferramentas</h3>
+<span class="badge">Ubuntu Server</span>
+</section>
+
+<section id="conceitos">
+<h2>Conceitos Desenvolvidos</h2>
+
+<h3>Introdução ao Sistema Operacional Linux</h3>
+<h4>Conceitos de Sistema Operacional</h4>
+<ul>
+<li><strong>Kernel</strong>: faz a ponte entre o usuário e o hardware; não possui ambiente gráfico.</li>
+<li><strong>Sistemas Operacionais Domésticos</strong>: Linux, Microsoft Windows e macOS.</li>
+<li><strong>Sistemas Operacionais Servidores</strong>.</li>
+</ul>
+
+<h4>Linux</h4>
+<ul>
+<li>Muito utilizado no segmento de <strong>servidores</strong> e por <strong>desenvolvedores</strong>.</li>
+<li>Desenvolvido por <strong>Linus Torvalds</strong>.</li>
+<li>Inspirado no <strong>Unix</strong>.</li>
+<li>Mantido por uma comunidade internacional e pelo ecossistema Linux.</li>
+<li>Utiliza ambiente gráfico ou terminal para acessar o kernel.</li>
+<li>Possui diversos ambientes gráficos, como GNOME e KDE Plasma.</li>
+<li><strong>Distribuições</strong>: consistem em um kernel Linux acompanhado de aplicativos e ferramentas específicas, mantidos por empresas ou comunidades.</li>
+</ul>
+
+<h4>Principais distribuições</h4>
+<ul><li>Debian, Ubuntu, Red Hat, Fedora, SUSE, entre outras.</li></ul>
+
+<h4>Sistemas Embarcados</h4>
+<ul><li>Android, Raspberry Pi, televisões, smartwatches, entre outros.</li></ul>
+
+<h4>Modelo Cliente-Servidor</h4>
+<ul>
+<li><strong>Servidor</strong>: fornece um recurso ou serviço, como site ou banco de dados, através de um sistema operacional de servidor.</li>
+<li><strong>Cliente</strong>: solicita o serviço através de um sistema operacional desktop ou outro cliente de rede.</li>
+</ul>
+
+<h4>Máquinas virtuais</h4>
+<ul><li>Instalação do <strong>Ubuntu Server</strong> em máquina virtual.</li></ul>
+
+<h3>Acesso Remoto a Máquinas Linux</h3>
+<ul>
+<li>Obter o IP: <code>ip a</code></li>
+<li>Acessar remotamente: <code>ssh nome-do-usuario-maquina-virtual@ip-da-maquina-virtual</code></li>
+</ul>
+
+<h3>Comandos Iniciais</h3>
+<ul>
+<li><code>reboot</code></li><li><code>date</code></li><li><code>clear</code> ou <code>Ctrl + l</code></li><li><code>systemctl poweroff</code></li>
+</ul>
+</section>
+
+<section id="arquivos">
+<h2>Trabalhando com Arquivos</h2>
+
+<h3>Navegação de Diretórios</h3>
+<ul>
+<li><code>pwd</code>: informa o diretório atual.</li>
+<li><code>cd /</code>: acessa o diretório raiz.</li>
+<li><code>cd ~</code>: acessa o diretório do usuário.</li>
+<li><code>ls</code>: lista diretórios e arquivos.</li>
+<li><code>cd nome_diretorio</code>: avança para um diretório.</li>
+<li><code>cd nome_diretorio/nome_diretorio</code>: avança dois diretórios.</li>
+<li><code>cd ..</code>: volta um diretório.</li>
+<li><code>cd ../..</code>: volta dois diretórios.</li>
+<li><strong>Dica:</strong> <code>Tab</code> completa nomes ou mostra possibilidades.</li>
+</ul>
+
+<h3>Filtrar a Exibição de Arquivos</h3>
+<ul>
+<li><code>ls | more</code></li>
+<li><code>ls nome_do_diretório/arquivo</code></li>
+<li><code>ls *</code></li>
+<li><code>ls a*</code></li>
+<li><code>ls nome-do-arquivo[1-5]*</code></li>
+<li><code>ls nome-do-arquivo[1,3,5]*</code></li>
+<li><code>ls nome-do-arquivo[^1,5]*</code></li>
+</ul>
+
+<h3>Criar um Arquivo</h3>
+<p><code>touch nome-do-arquivo.extensão</code></p>
+<p>Exemplo: <code>touch teste.txt</code></p>
+
+<h3>Busca de Arquivos</h3>
+<ul>
+<li><code>ls /nome-da-pasta/nome-arquivo</code></li>
+<li><code>ls /nome-da-pasta/arquivo*</code></li>
+<li><code>find -name "nome-do-arquivo"</code></li>
+<li><code>find -name "nome-do-arquivo*"</code></li>
+</ul>
+
+<h3>Criar Diretórios</h3>
+<ul>
+<li><code>mkdir novo-diretório</code></li>
+<li><code>mkdir "novo diretorio"</code></li>
+<li><code>mkdir novo-diretorio1 novo-diretorio2</code></li>
+<li><code>mkdir /home/diretorio/novo-diretorio</code></li>
+<li><code>mkdir /home/diretorio/diretorio/novo-diretorio</code></li>
+</ul>
+
+<h3>Remover Diretórios</h3>
+<ul>
+<li><code>rmdir nome-do-diretorio</code></li>
+<li><code>rmdir "nome do diretorio"</code></li>
+<li><code>rmdir diretorio1 diretorio2</code></li>
+</ul>
+
+<h3>Remover Arquivos</h3>
+<ul>
+<li><code>rm nome-do-arquivo</code></li>
+<li><code>rm *.extensão</code></li>
+<li><code>rm arquivo*</code></li>
+</ul>
+
+<h3>Edição de Arquivos</h3>
+<div class="card-grid">
+<div class="card"><h4>vi</h4><ul>
+<li><code>vi nome-do-arquivo</code></li><li><code>i</code>: editar</li><li><code>Esc</code>: sair do modo de edição</li><li><code>:</code>: comandos</li><li><code>w</code>: salvar</li><li><code>q</code>: sair</li>
+</ul></div>
+<div class="card"><h4>nano</h4><ul>
+<li><code>nano nome-do-arquivo</code></li><li><code>Ctrl + o</code> e Enter: salvar</li><li><code>Ctrl + x</code>: sair</li>
+</ul></div>
+</div>
+
+<h3 id="history">Comando history</h3>
+<ul>
+<li><code>history</code>: exibe comandos.</li>
+<li><code>history 30</code> / <code>history 5</code>: quantidade específica.</li>
+<li><code>!50</code>: executa o comando 50.</li>
+<li><code>!!</code>: executa o último comando.</li>
+<li><code>!?teste?</code>: executa o último comando que contém “teste”.</li>
+<li><code>history | grep "install"</code>: filtra o histórico.</li>
+<li><code>export HISTTIMEFORMAT="%c "</code>: exibe data e hora.</li>
+</ul>
+</section>
+
+<section id="usuarios">
+<h2>Trabalhando com Usuários</h2>
+
+<h3>Criando e Excluindo Usuários</h3>
+<ul>
+<li><code>useradd username</code></li>
+<li><code>useradd username -m -c "Nome Completo"</code></li>
+<li><code>passwd username</code></li>
+<li><code>chsh -s /bin/bash username</code></li>
+<li><code>useradd username -m -c "Nome Completo" -s /bin/bash</code></li>
+<li><code>userdel -r -f username</code></li>
+</ul>
+
+<h3>Editando Informações do Usuário</h3>
+<ul>
+<li><code>usermod username -c "Nome Completo"</code></li>
+<li><code>passwd username -e data</code></li>
+<li><code>passwd username -e</code></li>
+</ul>
+
+<h3>Scripts</h3>
+<ul>
+<li>Extensão: <code>.sh</code></li>
+<li>Shebang: <code>#!/bin/bash</code></li>
+<li><code>chmod +x nome-do-arquivo.sh</code></li>
+<li><code>./nome-do-arquivo.sh</code></li>
+</ul>
+<p><strong>Prática:</strong> <a href="https://github.com/astorti/formacao-linux-fundamentals-DIO/tree/main/scripts/create_users.sh" target="_blank">create_users.sh</a></p>
+
+<h3>Grupos de Usuários</h3>
+<ul>
+<li><code>cat /etc/group</code></li>
+<li><code>usermod -g grupo1 username</code></li>
+<li><code>usermod -G grupo1,grupo2 username</code></li>
+<li><code>usermod -G grupo1,grupo2,novo-grupo username</code></li>
+<li><code>gpasswd -d username grupo1</code></li>
+<li><code>groupadd nome-do-grupo</code></li>
+<li><code>groupdel nome-do-grupo</code></li>
+</ul>
+
+<h3>Sistemas de Permissões</h3>
+<ul>
+<li>Arquivos iniciam com <code>-</code>; diretórios com <code>d</code>.</li>
+<li><strong>r</strong>: read (leitura), <strong>w</strong>: write (escrita), <strong>x</strong>: execute (execução).</li>
+<li>Proprietário, grupo e outros possuem conjuntos independentes de permissões.</li>
+<li><code>rwx=7</code>, <code>rw-=6</code>, <code>r-x=5</code>, <code>r--=4</code>, <code>---=0</code>.</li>
+<li><code>chmod 760 /diretorio-ou-arquivo</code></li>
+<li><code>chmod +x exemplo1.sh</code></li>
+<li><code>chmod -x exemplo1.sh</code></li>
+<li><code>chown username2:group2 /diretorio/</code></li>
+</ul>
+</section>
+
+<section id="pacotes">
+<h2>Gerenciamento de Pacotes Linux</h2>
+
+<div class="card-grid">
+<div class="card"><h3>Ubuntu / Debian</h3>
+<ul>
+<li><code>apt-get</code> e <code>apt</code></li>
+<li><code>apt list</code></li><li><code>apt list --installed</code></li><li><code>apt list --upgradeable</code></li>
+<li><code>apt search parâmetro</code></li><li><code>apt install nome-do-pacote</code></li><li><code>apt remove nome-do-pacote</code></li>
+<li><code>apt update</code></li><li><code>apt upgrade</code></li>
+</ul>
+</div>
+<div class="card"><h3>Fedora / Red Hat</h3>
+<ul>
+<li><code>yum</code> e <code>dnf</code></li>
+<li><code>dnf search parâmetro</code></li><li><code>dnf install nome-do-pacote</code></li><li><code>dnf remove nome-do-pacote</code></li><li><code>dnf update</code></li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="discos">
+<h2>Gerenciamento de Discos</h2>
+<h3>Discos e Sistemas de Arquivos</h3>
+<ul>
+<li>HD e SSD.</li>
+<li>macOS: HFS.</li>
+<li>Unix/Linux: Ext3, Ext4, XFS.</li>
+<li>Windows: FAT32, NTFS.</li>
+</ul>
+
+<h3>Partições</h3>
+<ul>
+<li>Disco 1: <code>sda</code></li>
+<li>Disco 2: <code>sdb</code></li>
+<li>Partições: <code>sda1</code>, <code>sda2</code>, <code>sdb1</code>, <code>sdb2</code>, etc.</li>
+</ul>
+
+<h3>Visualizar Discos</h3>
+<ul><li><code>lsblk</code></li><li><code>fdisk -l</code></li></ul>
+
+<h3>Particionar e Formatar</h3>
+<pre>fdisk /dev/nome-do-disco</pre>
+<p>Exemplo: <code>fdisk /dev/sdb</code></p>
+<ul>
+<li><code>n</code>: nova partição</li><li><code>p</code>: partição primária</li><li><code>1</code>: número da partição</li>
+<li>Enter: primeiro setor padrão</li><li>Enter: último setor padrão</li><li><code>w</code>: salvar</li>
+</ul>
+<p><code>mkfs.ext4 /dev/sdb1</code></p>
+
+<h3>Montar e Desmontar</h3>
+<ul>
+<li><code>mkdir /mnt/disco2</code></li>
+<li><code>mount /dev/sdb1 /mnt/disco2</code></li>
+<li><code>umount /dev/sdb1</code></li>
+</ul>
+
+<h3>Montagem Automática</h3>
+<ul>
+<li><code>mkdir /disk2</code></li>
+<li>Editar <code>/etc/fstab</code>.</li>
+<li>Adicionar: <code>/dev/sdb1 /disk2 ext4 defaults 0 0</code></li>
+</ul>
+</section>
+
+<section id="processos">
+<h2>Copiando Arquivos e Manipulando Processos</h2>
+
+<h3>Copiar Arquivos e Diretórios</h3>
+<ul>
+<li><code>cp /home/usuario/Downloads/nome-do-arquivo /home/usuario/Documentos</code></li>
+<li><code>cp ./Downloads/nome-do-arquivo ./Documentos</code></li>
+<li><code>cp ./Downloads/*.txt ./Documentos</code></li>
+<li><code>cp ./Downloads/relatorio* ./Documentos</code></li>
+<li><code>cp -i ./Downloads/nome-do-arquivo ./Documentos</code></li>
+<li><code>cp ./Downloads/* ./Documentos</code></li>
+<li><code>cp -r ./Downloads/* ./Documentos</code></li>
+<li><code>cp -v ./Downloads/* ./Documentos</code></li>
+</ul>
+
+<h3>Mover ou Renomear</h3>
+<p>O comando <code>mv</code> move arquivos e diretórios sem necessidade de <code>-r</code>.</p>
+<ul>
+<li><code>mv -i -v ./Downloads/Arquivos ./Documentos</code></li>
+<li><code>mv ./Documentos/arquivo1.txt ./Documentos/arquivo2.txt</code></li>
+<li><code>mv arquivo1.txt arquivo2.txt</code></li>
+</ul>
+
+<h3>Processos</h3>
+<p><code>ps aux</code>: lista processos em execução, incluindo processos de diferentes usuários e processos sem terminal associado.</p>
+</section>
+
+<section id="servidor-arquivos">
+<h2>Servidores de Arquivos com Linux</h2>
+<h3>Samba</h3>
+<ul>
+<li>Instalação do Samba.</li>
+<li>Criação da pasta <code>publica</code> no <code>disk2</code>.</li>
+<li>Configuração de permissões.</li>
+<li>Editar <code>/etc/samba/smb.conf</code>.</li>
+</ul>
+<pre>[publica]
+writable = yes
+guest ok = yes
+guest only = yes</pre>
+<ul>
+<li><code>systemctl restart smbd</code></li>
+<li><code>systemctl status smbd</code></li>
+<li><code>systemctl enable smbd</code></li>
+<li>Acesso: <code>\\numero-do-ip-do-servidor\nome-da-pasta-publica</code></li>
+</ul>
+</section>
+
+<section id="servidor-web">
+<h2>Servidores Web com Linux</h2>
+<h3>Apache</h3>
+<ul>
+<li>Instalação: <code>apt install apache2</code></li>
+<li>Status: <code>systemctl status apache2</code></li>
+<li>IP: <code>ip a</code></li>
+<li>O navegador pode acessar o endereço IP do servidor.</li>
+<li>Página padrão: <code>/var/www/html/index.html</code>.</li>
+<li>Pode ser necessário liberar HTTP no firewall.</li>
+</ul>
+</section>
+
+<section id="database">
+<h2>Servidores de Banco de Dados com Linux</h2>
+<ul>
+<li>Instalação do MySQL Server: <code>apt install mysql-server</code></li>
+<p>Após a instalação, o MySQL Server já está disponível para uso</p>
+</ul>
+</section>
+
+<section id="desktop">
+<h2>Conhecendo o Linux Desktop</h2>
+<h3>Principais Distribuições</h3>
+<div class="card-grid">
+<div class="card">Ubuntu Desktop</div><div class="card">Fedora</div><div class="card">Debian</div>
+<div class="card">SUSE Linux</div><div class="card">Rocky Linux</div><div class="card">AlmaLinux</div><div class="card">Oracle Linux</div>
+</div>
+<ul>
+<li>Instalação e visão geral do ambiente desktop.</li>
+<li>Instalação de softwares pelo ambiente desktop.</li>
+<li>Instalação de ambientes gráficos.</li>
+</ul>
+</section>
+
+<section id="projetos">
+<h2>Projetos Práticos</h2>
+<p>Projetos desenvolvidos durante os estudos da formação.</p>
+
+<div class="project">
+<h3>Projeto 1 — Script de Criação de Estrutura de Usuários, Diretórios e Permissões</h3>
+<a href="https://github.com/astorti/projetos-dio/tree/main/Linux/InfraestruturaComoCodigo" target="_blank" rel="noopener noreferrer" aria-label="Link do projeto 1">Acessar projeto</a>
+</div>
+
+<div class="project">
+<h3>Projeto 2 — Script de Provisionamento de um Servidor Web (Apache)</h3>
+<a href="https://github.com/astorti/projetos-dio/tree/main/Linux/ScriptProvisionamentoServidorWebApache" target="_blank" rel="noopener noreferrer" aria-label="Link do projeto 2">Acessar projeto</a>
+</div>
+</section>
+
+</main>
+
+<a class="top" href="#top" title="Voltar ao topo">↑</a>
+
+<footer>
+<p>Formação Linux Fundamentals — material de estudo pessoal.</p>
+<p>Digital Innovation One · Linux Foundation</p>
+</footer>
+
+</body>
+</html>
